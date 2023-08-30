@@ -1,8 +1,8 @@
 {
   "name": "react-chat",
-  "description": "This is react chat of edvin company",
+  "description": "This is react chat package for using in others app",
   "version": "1.0.0",
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
     "build": "rimraf dist && rollup -c",
     "dev": "rollup -c -w",
