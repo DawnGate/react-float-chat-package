@@ -1,8 +1,15 @@
 import React from "react";
-import { ChatProps } from "./Chat.types";
+
 import styled from "styled-components";
 
-const Chat = ({ type }: ChatProps) => {
+import { ChatProps } from "./Chat.types";
+
+const Wrapper = styled.div`
+  padding: 8px;
+  background: red;
+`;
+
+function Chat({ type }: ChatProps) {
   return (
     <Wrapper>
       <div>
@@ -11,11 +18,6 @@ const Chat = ({ type }: ChatProps) => {
       </div>
     </Wrapper>
   );
-};
-
-const Wrapper = styled.div`
-  padding: 8px;
-  background: red;
-`;
+}
 
 export default Chat;
