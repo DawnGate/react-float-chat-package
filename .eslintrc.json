@@ -9,8 +9,8 @@
     "airbnb/hooks",
     "airbnb-typescript",
     "prettier",
-    "plugin:@typescript-eslint/recommended-type-checked",
-    "plugin:@typescript-eslint/stylistic-type-checked"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/stylistic"
   ],
   "plugins": ["@typescript-eslint"],
   "parser": "@typescript-eslint/parser",
@@ -32,6 +32,7 @@
   },
   "rules": {
     "import/no-default-export": "off",
+    "import/prefer-default-export": "off",
     "no-restricted-exports": "off"
   }
 }

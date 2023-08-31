@@ -2,6 +2,8 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import terser from "@rollup/plugin-terser";
+import image from "@rollup/plugin-image";
+import url from "@rollup/plugin-url";
 
 import dts from "rollup-plugin-dts";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
@@ -23,7 +25,16 @@ export default [
         sourcemap: true,
       },
     ],
-    plugins: [peerDepsExternal(), resolve(), commonjs(), typescript({ tsconfig: "./tsconfig.json" }), terser()],
+    plugins: [
+      peerDepsExternal(),
+      resolve(),
+      commonjs(),
+      image(),
+      url(),
+
+      typescript({ tsconfig: "./tsconfig.json" }),
+      terser(),
+    ],
   },
   {
     input: "src/index.ts",
