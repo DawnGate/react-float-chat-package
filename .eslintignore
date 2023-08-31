@@ -6,4 +6,5 @@ dist
 node_modules
 coverage
 
-rollup.config.js
+rollup.config.*
+babel.config.js
