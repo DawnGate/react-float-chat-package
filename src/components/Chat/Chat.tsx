@@ -1,5 +1,4 @@
 import React from "react";
-import useChatStore from "src/stores/global";
 
 import styled from "styled-components";
 
@@ -16,11 +15,11 @@ const Wrapper = styled.div`
 `;
 
 function Chat() {
-  const isOpenChat = useChatStore((state) => state.open);
   return (
     <Wrapper>
       <Global />
-      {isOpenChat ? <ChatLeft /> : <FloatButton />}
+      <ChatLeft />
+      <FloatButton />
     </Wrapper>
   );
 }

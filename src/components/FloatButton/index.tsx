@@ -11,7 +11,11 @@ import chatIcon from "../../assets/icons/chat.svg";
 import Icon from "../Icon";
 import CountNewMessage from "../CountNewMessage";
 
-const StyledButton = styled.button`
+interface IStyledButtonProps {
+  isOpen: boolean;
+}
+
+const StyledButton = styled.button<IStyledButtonProps>`
   width: 60px;
   height: 60px;
   cursor: pointer;
@@ -30,12 +34,16 @@ const StyledButton = styled.button`
   &:hover {
     background-color: ${colors.purple[400]};
   }
+
+  transition: all 0.3s ease-out;
+  ${(props) => props.isOpen && "display: none;"}
 `;
 
 function FloatButton() {
   const toggleChat = useChatStore((state) => state.toggleChat);
+  const isOpenChat = useChatStore((state) => state.open);
   return (
-    <StyledButton onClick={toggleChat}>
+    <StyledButton onClick={toggleChat} isOpen={isOpenChat}>
       <Icon src={chatIcon} alt="Chat icon" size={36} />
       <CountNewMessage count={1} />
     </StyledButton>
