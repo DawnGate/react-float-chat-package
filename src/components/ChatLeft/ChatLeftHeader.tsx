@@ -28,13 +28,16 @@ const WrapperContent = styled.div`
   align-items: center;
 `;
 
-const IconWrapper = styled.div`
+const IconWrapper = styled.button`
   padding: 8px;
   height: 32px;
+  width: 32px;
+  border: none;
 
   cursor: pointer;
   border-radius: ${borderRadius.full};
 
+  background: transparent;
   &:hover {
     background: ${colors.purple[100]};
   }

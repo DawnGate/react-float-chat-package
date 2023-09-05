@@ -5,12 +5,18 @@ interface ChatStoreProps {
   toggleChat: () => void;
 }
 
+const IS_OPEN_CHAT = "isOpenChat";
+
 const useChatStore = create<ChatStoreProps>((set) => ({
-  open: Boolean(localStorage.getItem("isOpenChat")) ?? false,
+  open: Boolean(localStorage.getItem(IS_OPEN_CHAT)) ?? false,
   toggleChat: () =>
     set((state) => {
       const updateOpenState = !state.open;
-      localStorage.setItem("isOpenChat", updateOpenState.toString());
+      if (updateOpenState) {
+        localStorage.setItem(IS_OPEN_CHAT, updateOpenState.toString());
+      } else {
+        localStorage.removeItem(IS_OPEN_CHAT);
+      }
       return { open: updateOpenState };
     }),
 }));

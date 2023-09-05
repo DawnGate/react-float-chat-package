@@ -6,9 +6,13 @@ import styled from "styled-components";
 import FloatButton from "../FloatButton";
 import ChatLeft from "../ChatLeft";
 import Global from "../styles/global";
+import { media } from "../styles/mediaQuery";
 
 const Wrapper = styled.div`
-  font-family: inherit;
+  display: none;
+  ${media.laptop} {
+    display: block;
+  }
 `;
 
 function Chat() {
