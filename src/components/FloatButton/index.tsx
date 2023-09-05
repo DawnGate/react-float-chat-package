@@ -1,4 +1,6 @@
 import React from "react";
+import useChatStore from "src/stores/global";
+
 import styled from "styled-components";
 
 import colors from "src/system-design/colors";
@@ -23,13 +25,19 @@ const StyledButton = styled.button`
   position: fixed;
   bottom: 24px;
   right: 28px;
+  font-family: inherit;
+
+  &:hover {
+    background-color: ${colors.purple[400]};
+  }
 `;
 
 function FloatButton() {
+  const toggleChat = useChatStore((state) => state.toggleChat);
   return (
-    <StyledButton>
+    <StyledButton onClick={toggleChat}>
       <Icon src={chatIcon} alt="Chat icon" size={36} />
-      <CountNewMessage count={18} />
+      <CountNewMessage count={1} />
     </StyledButton>
   );
 }

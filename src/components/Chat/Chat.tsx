@@ -1,25 +1,22 @@
 import React from "react";
+import useChatStore from "src/stores/global";
 
 import styled from "styled-components";
 
-import { ChatProps } from "./Chat.types";
 import FloatButton from "../FloatButton";
+import ChatLeft from "../ChatLeft";
+import Global from "../styles/global";
 
 const Wrapper = styled.div`
-  padding: 8px;
-  background: red;
-  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
-  font-family: "Montserrat", sans-serif;
+  font-family: inherit;
 `;
 
-function Chat({ type }: ChatProps) {
+function Chat() {
+  const isOpenChat = useChatStore((state) => state.open);
   return (
     <Wrapper>
-      <div>
-        <p>This is a chat</p>
-        <p>type: {type}</p>
-        <FloatButton />
-      </div>
+      <Global />
+      {isOpenChat ? <ChatLeft /> : <FloatButton />}
     </Wrapper>
   );
 }

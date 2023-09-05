@@ -15,7 +15,7 @@ function App() {
           Learn React
         </a>
       </header>
-      <Chat type="primary" />
+      <Chat />
     </div>
   );
 }

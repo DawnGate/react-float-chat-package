@@ -2,6 +2,7 @@ import React from "react";
 import borderRadius from "src/system-design/borderRadius";
 import colors from "src/system-design/colors";
 import typography from "src/system-design/typography";
+import { padStartForNumber } from "src/utils/numberHelper";
 import { styled } from "styled-components";
 
 interface ICountMessageProps {
@@ -27,7 +28,7 @@ function CountNewMessage(props: ICountMessageProps) {
   if (!count) {
     return null;
   }
-  return <StyledCountNewMessage>+{count > 99 ? 99 : count}</StyledCountNewMessage>;
+  return <StyledCountNewMessage>+{count > 99 ? 99 : padStartForNumber(count)}</StyledCountNewMessage>;
 }
 
 export default CountNewMessage;
