@@ -2,10 +2,11 @@ import React from "react";
 
 import styled from "styled-components";
 
+import { media } from "src/styles/mediaQuery";
+import Global from "src/styles/global";
+
 import FloatButton from "../FloatButton";
 import ChatLeft from "../ChatLeft";
-import Global from "../styles/global";
-import { media } from "../styles/mediaQuery";
 
 const Wrapper = styled.div`
   display: none;

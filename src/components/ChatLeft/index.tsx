@@ -8,6 +8,7 @@ import boxShadows from "src/system-design/boxShadow";
 import colors from "src/system-design/colors";
 
 import ChatLeftHeader from "./ChatLeftHeader";
+import Tabs from "../Tabs";
 
 interface IStyledChatLeftWrapper {
   isOpen: boolean;
@@ -44,6 +45,7 @@ function ChatLeft() {
   return (
     <ChatLeftWrapper isOpen={isOpenChat}>
       <ChatLeftHeader />
+      <Tabs />
       <div>
         <p>Hello</p>
       </div>
