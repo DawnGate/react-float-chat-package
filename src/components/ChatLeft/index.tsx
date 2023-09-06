@@ -10,6 +10,7 @@ import colors from "src/system-design/colors";
 import ChatLeftHeader from "./ChatLeftHeader";
 import Tabs from "../Tabs";
 import SearchBox from "../SearchBox";
+import ChatList from "../ChatList";
 
 interface IStyledChatLeftWrapper {
   $isOpen: boolean;
@@ -48,9 +49,7 @@ function ChatLeft() {
       <ChatLeftHeader />
       <Tabs />
       <SearchBox />
-      <div>
-        <p>Hello</p>
-      </div>
+      <ChatList />
     </ChatLeftWrapper>
   );
 }
