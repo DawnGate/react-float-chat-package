@@ -4,9 +4,9 @@ import typography from "src/system-design/typography";
 import { styled } from "styled-components";
 
 import { TabType } from "src/constants/tab";
+import useChatStore from "src/stores/global";
 
 interface ITabProps {
-  active?: boolean;
   title: string;
   value: TabType;
 }
@@ -30,15 +30,18 @@ const WrapperText = styled.p<ITabPropsWrapper>`
   font-weight: ${(props) => (props.active ? 700 : 400)};
 `;
 
-function Tab({ active = false, title, value }: ITabProps) {
+function Tab({ title, value }: ITabProps) {
+  const activatedTab = useChatStore((state) => state.activeTab);
+  const handleChangeActiveTab = useChatStore((state) => state.changeActiveTab);
+  const isActive = activatedTab === value;
   return (
     <Wrapper
-      active={active}
+      active={isActive}
       onClick={() => {
-        console.log(value);
+        handleChangeActiveTab(value);
       }}
     >
-      <WrapperText active={active}>{title}</WrapperText>
+      <WrapperText active={isActive}>{title}</WrapperText>
     </Wrapper>
   );
 }

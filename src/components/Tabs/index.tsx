@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 function Tabs() {
   return (
     <Wrapper>
-      <Tab active title="Community" value={TabType.COMMUNITY} />
+      <Tab title="Community" value={TabType.COMMUNITY} />
       <Tab title="Friends" value={TabType.FRIENDS} />
       <Tab title="Classes" value={TabType.CLASSES} />
     </Wrapper>
