@@ -15,6 +15,9 @@ const colors = {
     400: "#BEBEBE",
     900: "#222222",
   },
+  overlay: {
+    100: "#2222221A",
+  },
   white: "#FFFFFF",
 };
 

@@ -12,22 +12,22 @@ interface ITabProps {
 }
 
 interface ITabPropsWrapper {
-  active?: boolean;
+  $isActive?: boolean;
 }
 
 const Wrapper = styled.button<ITabPropsWrapper>`
   padding: 7px 24px;
   height: 30px;
   border: none;
-  border-bottom: solid 2px ${(props) => (props.active ? colors.purple[400] : colors.white)};
+  border-bottom: solid 2px ${(props) => (props.$isActive ? colors.purple[400] : colors.white)};
   background: transparent;
   cursor: pointer;
 `;
 
 const WrapperText = styled.p<ITabPropsWrapper>`
   ${typography.caption}
-  color: ${(props) => (props.active ? colors.purple[400] : colors.gray[900])};
-  font-weight: ${(props) => (props.active ? 700 : 400)};
+  color: ${(props) => (props.$isActive ? colors.purple[400] : colors.gray[900])};
+  font-weight: ${(props) => (props.$isActive ? 700 : 400)};
 `;
 
 function Tab({ title, value }: ITabProps) {
@@ -36,12 +36,12 @@ function Tab({ title, value }: ITabProps) {
   const isActive = activatedTab === value;
   return (
     <Wrapper
-      active={isActive}
+      $isActive={isActive}
       onClick={() => {
         handleChangeActiveTab(value);
       }}
     >
-      <WrapperText active={isActive}>{title}</WrapperText>
+      <WrapperText $isActive={isActive}>{title}</WrapperText>
     </Wrapper>
   );
 }

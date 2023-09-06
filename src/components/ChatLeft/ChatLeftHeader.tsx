@@ -11,6 +11,7 @@ import topChatBarBackground from "../../assets/images/TopChatBar.png";
 import closeIcon from "../../assets/icons/close.svg";
 
 import Icon from "../Icon";
+import IconButton from "../IconButton";
 
 const Wrapper = styled.div`
   height: 56px;
@@ -28,21 +29,6 @@ const WrapperContent = styled.div`
   align-items: center;
 `;
 
-const IconWrapper = styled.button`
-  padding: 8px;
-  height: 32px;
-  width: 32px;
-  border: none;
-
-  cursor: pointer;
-  border-radius: ${borderRadius.full};
-
-  background: transparent;
-  &:hover {
-    background: ${colors.purple[100]};
-  }
-`;
-
 const WrapperHeaderText = styled.p`
   ${typography.header}
 `;
@@ -53,9 +39,9 @@ function ChatLeftHeader() {
     <Wrapper>
       <WrapperContent>
         <WrapperHeaderText>Chat</WrapperHeaderText>
-        <IconWrapper onClick={toggleChat}>
+        <IconButton onClick={toggleChat} size={32}>
           <Icon src={closeIcon} alt="close-icon" size={16} />
-        </IconWrapper>
+        </IconButton>
       </WrapperContent>
     </Wrapper>
   );

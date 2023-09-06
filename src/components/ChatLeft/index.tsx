@@ -9,9 +9,10 @@ import colors from "src/system-design/colors";
 
 import ChatLeftHeader from "./ChatLeftHeader";
 import Tabs from "../Tabs";
+import SearchBox from "../SearchBox";
 
 interface IStyledChatLeftWrapper {
-  isOpen: boolean;
+  $isOpen: boolean;
 }
 
 const ChatLeftWrapper = styled.div<IStyledChatLeftWrapper>`
@@ -37,15 +38,16 @@ const ChatLeftWrapper = styled.div<IStyledChatLeftWrapper>`
   transition: all 0.3s ease-out;
 
   ${(props) =>
-    props.isOpen && `opacity: 1;bottom: 2px;width: 420px;height: 750px;border-radius: ${borderRadius["2lg"]};`}
+    props.$isOpen && `opacity: 1;bottom: 2px;width: 420px;height: 750px;border-radius: ${borderRadius["2lg"]};`}
 `;
 
 function ChatLeft() {
   const isOpenChat = useChatStore((state) => state.open);
   return (
-    <ChatLeftWrapper isOpen={isOpenChat}>
+    <ChatLeftWrapper $isOpen={isOpenChat}>
       <ChatLeftHeader />
       <Tabs />
+      <SearchBox />
       <div>
         <p>Hello</p>
       </div>
