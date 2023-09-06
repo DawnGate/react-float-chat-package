@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 
 function ChatList() {
   return (
-    <Wrapper>
+    <Wrapper className="scrollbar-display">
       <Item />
       <Item />
       <Item />

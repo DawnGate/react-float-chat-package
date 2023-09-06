@@ -12,6 +12,12 @@ const Wrapper = styled.div`
   display: flex;
   gap: 16px;
   align-items: center;
+
+  cursor: pointer;
+  &:hover {
+    background: ${colors.purple[50]}80;
+    border-radius: ${borderRadius.lg};
+  }
 `;
 
 const AvatarWrapper = styled.div`

@@ -9,4 +9,15 @@ export default createGlobalStyle`
     box-sizing: border-box;
     font-family: inherit;
   }   
+
+  .scrollbar-display::-webkit-scrollbar-thumb {
+    background: rgba(179,179,179, .5);
+    border-radius: 10px;
+    border: 1px solid white;
+  }
+
+  .scrollbar-display::-webkit-scrollbar {
+    width: 6px;
+    background: transparent;
+  }
 `;
