@@ -7,6 +7,7 @@ import { styled } from "styled-components";
 import searchIcon from "../../assets/icons/search.svg";
 
 import Icon from "../Icon";
+import IconButton from "../IconButton";
 
 const Wrapper = styled.div`
   height: 56px;
@@ -28,12 +29,33 @@ const WrapperSearchContent = styled.div`
   border: 1px solid ${colors.overlay[100]};
 `;
 
+const SearchInput = styled.input`
+  flex: 1;
+  padding-left: 2px;
+  padding-right: 2px;
+
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+
+  color: #707991;
+  background: transparent;
+  border: none;
+
+  &:focus {
+    box-shadow: 0 0 0 1px ${colors.overlay[100]};
+    border-radius: ${borderRadius.md};
+  }
+`;
+
 function SearchBox() {
   return (
     <Wrapper>
       <WrapperSearchContent>
-        <Icon src={searchIcon} alt="search-icon" size={24} />
-        <div>Search</div>
+        <IconButton size={24}>
+          <Icon src={searchIcon} alt="search-icon" size={18} />
+        </IconButton>
+        <SearchInput placeholder="Search" />
       </WrapperSearchContent>
     </Wrapper>
   );
